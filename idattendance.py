@@ -23,7 +23,12 @@ for item in br.links():
       br.open(item.url)
       break
 
+for newitem in br.links():
+   if 'questions' in str(newitem):
+      br.open(newitem.url)
+      break
+
 br.select_form(nr=0)
-br.form['q807']=['y']
+br.form['q818']=['y']
 br.submit()
 print 'Your attendance for today has been given.'
